@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101225" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111225'/%3E%3Cpath d='M13 48V16h9l14 18V16h10v32h-9L23 30v18z' fill='%2369f5e1'/%3E%3C/svg%3E" />
+  <title>Neon Riot — Last Bell</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell" aria-label="Neon Riot arcade fighting game">
+    <canvas id="game" width="1280" height="720" aria-label="Neon Riot game screen"></canvas>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="top-hud" id="topHud">
+      <div class="player-card">
+        <div class="portrait">R</div>
+        <div class="player-info"><div class="eyebrow">PLAYER 1 <span id="lives">× 3</span></div><div class="health-track"><div id="healthFill" class="health-fill"></div></div><div class="small-label" id="healthText">100 / 100</div></div>
+      </div>
+      <div class="stage-card"><div class="eyebrow" id="stageEyebrow">STAGE 01</div><div class="stage-title" id="stageTitle">THE LAST BELL</div><div class="stage-progress"><span id="stageProgress"></span></div></div>
+      <div class="score-card"><div class="eyebrow">SCORE</div><div class="score-value" id="score">000000</div><div class="combo" id="combo">READY TO FIGHT</div></div>
+    </div>
+    <div class="boss-hud" id="bossHud"><div class="boss-name" id="bossName">THE HEADMASTER</div><div class="boss-track"><div id="bossFill" class="boss-fill"></div></div></div>
+    <div class="toast" id="toast"></div>
+    <div class="controls-hint" id="hint"><span>MOVE</span> WASD / ARROWS <i>•</i> <span>STRIKE</span> J <i>•</i> <span>POWER</span> K <i>•</i> <span>PAUSE</span> P</div>
+    <div class="touch-controls" id="touchControls">
+      <div class="dpad" aria-label="Movement controls">
+        <button data-key="up" class="up" aria-label="Move up">▲</button>
+        <button data-key="left" class="left" aria-label="Move left">◀</button>
+        <button data-key="down" class="down" aria-label="Move down">▼</button>
+        <button data-key="right" class="right" aria-label="Move right">▶</button>
+      </div>
+      <div class="action-pad"><button id="specialBtn" class="action special" aria-label="Special attack">✦<small>POWER</small></button><button id="attackBtn" class="action attack" aria-label="Attack">✊<small>STRIKE</small></button></div>
+    </div>
+    <div class="overlay" id="overlay">
+      <div class="title-mark"><div class="title-kicker">A NEON-CITY ARCADE BRAWLER</div><h1>NEON <em>RIOT</em></h1><div class="title-rule"><span></span> LAST BELL <span></span></div></div>
+      <p class="intro-copy">The city is theirs. <strong>Tonight, you take it back.</strong></p>
+      <div class="stage-chips"><span>01 SCHOOL</span><span>02 STREETS</span><span>03 MALL</span><span>04 UNDER CONSTRUCTION</span><span>05 BROADCASTER'S HALL</span></div>
+      <button id="startBtn" class="start-button">START THE RIOT <b>▶</b></button>
+      <div class="overlay-note">MOVE <kbd>WASD</kbd> / <kbd>← ↑ ↓ →</kbd> &nbsp; STRIKE <kbd>J</kbd> &nbsp; POWER <kbd>K</kbd></div>
+      <div class="overlay-foot">5 STAGES <i>◆</i> 2 BONUS ROUNDS <i>◆</i> NO MERCY</div>
+    </div>
+    <div class="pause-screen" id="pauseScreen"><div class="pause-box"><div class="eyebrow">TAKE A BREATHER</div><h2>PAUSED</h2><p>Press P or tap below when you're ready.</p><button id="resumeBtn" class="start-button">BACK TO THE RIOT <b>▶</b></button></div></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
